@@ -43,12 +43,10 @@ int array::deleteAtIndex(int index)
 
 int array::findIndexByValue(int value)
 {
-    int counter=0;
-    for(int counter=sizeCounter;counter>=0;counter--)
+    for(int counter=0;counter<sizeCounter;counter++)
     {
         if(this->array[counter]==value)
         return counter;
     }
     return 0;
 }
-
