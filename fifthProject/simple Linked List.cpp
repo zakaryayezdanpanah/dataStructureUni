@@ -17,7 +17,7 @@ public:
     void insertAtEnd(int);
     void insertAtIndex(int, int);
     void updateNode(int, int);
-    void sizeOfList();
+    int sizeOfList();
     void showAllItems();
     void concatenate(list *);
     void invert();
@@ -74,7 +74,7 @@ void linkedList::insertAtEnd(int num)
 
 void linkedList::insertAtIndex(int num, int index)
 {
-    if (index < 0)
+    if (index < 0 || index > sizeOfList() - 1)
     {
         cout << "The input index is out of range \n";
         return;
@@ -108,7 +108,7 @@ void linkedList::insertAtIndex(int num, int index)
 
 void linkedList::updateNode(int num, int index)
 {
-    if (index < 0)
+    if (index < 0 || index > sizeOfList() - 1)
     {
         cout << "The input index is out of range \n";
         return;
@@ -126,11 +126,12 @@ void linkedList::updateNode(int num, int index)
     temp->num = num;
 };
 
-void linkedList::sizeOfList()
+int linkedList::sizeOfList()
 {
     if (head == NULL)
     {
         cout << "list is empty \n";
+        return 0;
     }
     else
     {
@@ -142,7 +143,7 @@ void linkedList::sizeOfList()
             counter++;
         }
 
-        cout << "size of the list is: " << counter << " \n";
+        return counter;
     }
 };
 
@@ -248,7 +249,7 @@ int linkedList::removeNodeAtEnd()
 
 int linkedList::removeNodeAtIndex(int index)
 {
-    if (index < 0)
+     if (index < 0 || index > sizeOfList() - 1)
     {
         cout << "The input index is out of range \n";
         return 0;
