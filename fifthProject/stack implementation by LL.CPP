@@ -25,7 +25,7 @@ bool stack::isEmpty()
 
 bool stack::isFull()
 {
-    if (this->counter == this->maxSize - 1)
+    if (this->counter == this->maxSize )
         return true;
     else
         return false;
