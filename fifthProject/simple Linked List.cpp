@@ -74,7 +74,7 @@ void linkedList::insertAtEnd(int num)
 
 void linkedList::insertAtIndex(int num, int index)
 {
-    if (index < 0 || index > sizeOfList() - 1)
+    if (index < 0 || index > sizeOfList()-1)
     {
         cout << "The input index is out of range \n";
         return;
@@ -82,6 +82,11 @@ void linkedList::insertAtIndex(int num, int index)
     else if (index == 0)
     {
         insertAtBegin(num);
+        return;
+    }
+    else if (index == sizeOfList()-1)
+    {
+        insertAtEnd(num);
         return;
     }
     else
@@ -255,6 +260,11 @@ int linkedList::removeNodeAtIndex(int index)
         return 0;
     }
     else if (index == 0)
+    {
+        removeNodeAtBegin();
+        return 0;
+    }
+    else if (index == sizeOfList()-1)
     {
         removeNodeAtEnd();
         return 0;
